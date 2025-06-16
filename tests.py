@@ -1,3 +1,5 @@
+import pytest
+
 from main import BooksCollector
 
 # класс TestBooksCollector объединяет набор тестов, которыми мы покрываем наше приложение BooksCollector
@@ -22,3 +24,9 @@ class TestBooksCollector:
 
     # напиши свои тесты ниже
     # чтобы тесты были независимыми в каждом из них создавай отдельный экземпляр класса BooksCollector()
+    @pytest.mark.parametrize('name',['Заводной апельсин: Избранные страницы','Мастер и Маргарита: эпилог вечной любви','Война и мир: эпическое полотно Льва Толстого в четырёх томах'])
+    def test_add_new_book_when_name_book_more40_symbol_false(self):
+    def test_add_new_book_when_name_book_40_symbol_true(self):
+    def test_add_new_book_when_name_book_less40_symbol_true(self):
+    def test_add_new_book_
+    def test_add_new_book_
