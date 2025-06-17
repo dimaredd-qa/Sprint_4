@@ -1,3 +1,4 @@
+pytest.ini
 __pycache__/
 .idea/
 ### JetBrains template
