@@ -1,5 +1,6 @@
 ﻿import pytest
 
+from conftest import favorite_one_book
 from main import BooksCollector
 
 
@@ -62,9 +63,19 @@ class TestBooksCollector:
         assert len(bookscollector.get_books_genre()) == 0
 
 
+    def test_get_book_genre_for_existing_book_true(self, collector_three_books):
+        genre = collector_three_books.get_book_genre('Проклятье')
+        assert genre == 'Ужасы'
+
+
     def test_get_books_with_specific_genre_valid_true(self, collector_three_books):
         books = collector_three_books.get_books_with_specific_genre('Ужасы')
         assert len(books) == 2
+
+
+    def test_get_books_genre_returns_all_books_true(self, collector_three_books):
+        books_genre = collector_three_books.get_books_genre()
+        assert len(books_genre) == 3
 
 
     def test_get_books_for_children_valid_true(self, collector_three_books):
@@ -81,7 +92,9 @@ class TestBooksCollector:
         assert favorite_one_book.get_list_of_favorites_books() == []
 
 
-
+    def test_get_list_of_favorites_books_returns_correct_list(self, favorite_one_book):
+        favorite_book = favorite_one_book.get_list_of_favorites_books()
+        assert favorite_book == ['Бэтмен']
 
 
 
